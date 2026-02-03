@@ -1,0 +1,9 @@
+<library path="gantry_robot_hardware_interface">
+  <class name="gantry_robot_hardware_interface/GantryRobotHardwareInterface"
+         type="gantry_robot_hardware_interface::GantryRobotHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ros2_control hardware interface.
+    </description>
+  </class>
+</library>

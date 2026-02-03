@@ -1,0 +1,21 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - gantry_robot_controller
+
+  gantry_robot_controller:
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - world_to_x_rail
+      - x_rail_to_y_rail
+      - joint_1_2
+      - joint_2_3
+      - joint_3_4
+      - joint_4_5
+      - joint_5_6
+      - joint_6_7
