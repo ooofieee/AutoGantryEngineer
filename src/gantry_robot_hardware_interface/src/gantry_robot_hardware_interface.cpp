@@ -20,6 +20,7 @@
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "moveit_msgs/msg/display_trajectory.hpp"
+#include "controller_manager_msgs/srv/switch_controller.hpp"
 
 namespace gantry_robot_hardware_interface
 {
@@ -60,6 +61,11 @@ hardware_interface::CallbackReturn GantryRobotHardwareInterface::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   RCLCPP_INFO(logger_, "Configuring hardware interface...");
+
+  // 创建 ROS 节点用于服务调用
+  node_ = rclcpp::Node::make_shared("gantry_robot_hw_node");
+  switch_controller_client_ = node_->create_client<controller_manager_msgs::srv::SwitchController>(
+    "/controller_manager/switch_controller");
 
   // 使用已有的 EngineerProtocol 类
   try
@@ -136,6 +142,7 @@ hardware_interface::CallbackReturn GantryRobotHardwareInterface::on_activate(
   }
 
   communication_active_ = true;
+  jtc_active_ = true;  // 初始状态假设 JTC 是激活的
 
   RCLCPP_INFO(logger_, "Hardware interface activated successfully");
   return CallbackReturn::SUCCESS;
@@ -177,6 +184,14 @@ hardware_interface::return_type GantryRobotHardwareInterface::read(
       hw_states_position_[i] = static_cast<double>(data[i + 1]);
       hw_states_velocity_[i] = static_cast<double>(data[i + 7]);
     }
+
+    if(!is_ros_control_mode_){
+      // mode != 3 时，关闭 JTC，防止manual与ros_control冲突
+      if (jtc_active_) {
+        deactivate_jtc();
+      }
+      update_current_state();
+    }
   }
 
   return hardware_interface::return_type::OK;
@@ -185,12 +200,6 @@ hardware_interface::return_type GantryRobotHardwareInterface::read(
 hardware_interface::return_type GantryRobotHardwareInterface::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/){
   if (!communication_active_ || !protocol_)
-  {
-    return hardware_interface::return_type::OK;
-  }
-
-  // 仅在 ros_control 模式 (mode == 3) 时执行 write
-  if (!is_ros_control_mode_)
   {
     return hardware_interface::return_type::OK;
   }
@@ -204,6 +213,17 @@ hardware_interface::return_type GantryRobotHardwareInterface::write(
       has_valid_command = true;
       break;
     }
+  }
+
+  // 仅在 ros_control 模式 (mode == 3) 时执行 write
+  if (!is_ros_control_mode_)
+  {
+    return hardware_interface::return_type::OK;
+  }
+
+  // 激活JTC
+  if (!jtc_active_) {
+    activate_jtc();
   }
 
   if (has_valid_command)
@@ -223,6 +243,78 @@ hardware_interface::return_type GantryRobotHardwareInterface::write(
 
   return hardware_interface::return_type::OK;
 }
+
+void GantryRobotHardwareInterface::update_current_state()
+{
+  moveit_msgs::msg::DisplayTrajectory trajectory_msg;
+  trajectory_msg.trajectory.resize(1);
+  trajectory_msg.trajectory[0].joint_trajectory.points.resize(1);
+  trajectory_msg.trajectory[0].joint_trajectory.points[0].positions.resize(NUM_JOINTS);
+  
+  for (size_t i = 0; i < NUM_JOINTS; ++i)
+  {
+    trajectory_msg.trajectory[0].joint_trajectory.points[0].positions[i] = hw_states_position_[i];
+    hw_commands_position_[i] = hw_states_position_[i];
+  }      
+
+  protocol_->send(trajectory_msg, 0);
+}
+
+void GantryRobotHardwareInterface::deactivate_jtc()
+{
+  if (!switch_controller_client_->wait_for_service(std::chrono::milliseconds(100))) {
+    RCLCPP_WARN(logger_, "Switch controller service not available");
+    return;
+  }
+
+  auto request = std::make_shared<controller_manager_msgs::srv::SwitchController::Request>();
+  request->deactivate_controllers = {"gantry_robot_controller"};
+  request->strictness = controller_manager_msgs::srv::SwitchController::Request::BEST_EFFORT;
+
+  auto future = switch_controller_client_->async_send_request(request);
+  
+  // 使用 spin_some 来处理响应，避免阻塞
+  if (rclcpp::spin_until_future_complete(node_, future, std::chrono::milliseconds(500)) == 
+      rclcpp::FutureReturnCode::SUCCESS) {
+    auto result = future.get();
+    if (result->ok) {
+      jtc_active_ = false;
+      RCLCPP_INFO(logger_, "JTC deactivated successfully");
+    } else {
+      RCLCPP_WARN(logger_, "Failed to deactivate JTC");
+    }
+  } else {
+    RCLCPP_WARN(logger_, "Timeout waiting for JTC deactivation");
+  }
+}
+
+void GantryRobotHardwareInterface::activate_jtc()
+{
+  if (!switch_controller_client_->wait_for_service(std::chrono::milliseconds(100))) {
+    RCLCPP_WARN(logger_, "Switch controller service not available");
+    return;
+  }
+
+  auto request = std::make_shared<controller_manager_msgs::srv::SwitchController::Request>();
+  request->activate_controllers = {"gantry_robot_controller"};
+  request->strictness = controller_manager_msgs::srv::SwitchController::Request::BEST_EFFORT;
+
+  auto future = switch_controller_client_->async_send_request(request);
+  
+  if (rclcpp::spin_until_future_complete(node_, future, std::chrono::milliseconds(500)) == 
+      rclcpp::FutureReturnCode::SUCCESS) {
+    auto result = future.get();
+    if (result->ok) {
+      jtc_active_ = true;
+      RCLCPP_INFO(logger_, "JTC activated successfully");
+    } else {
+      RCLCPP_WARN(logger_, "Failed to activate JTC");
+    }
+  } else {
+    RCLCPP_WARN(logger_, "Timeout waiting for JTC activation");
+  }
+}
+
 
 }  // namespace gantry_robot_hardware_interface
 

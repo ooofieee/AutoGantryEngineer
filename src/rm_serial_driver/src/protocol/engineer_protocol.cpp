@@ -59,7 +59,7 @@ namespace fyt::serial_driver::protocol{
             packet.unloadData<float>(raw_vel[5], 46);  // velocity joint 6
 
             data[0] = static_cast<float>(mode);
-            data[1] = raw_pos[0] / 1000.0f - 0.3f;
+            data[1] = -(raw_pos[0] / 1000.0f) - 0.3f;
             data[2] = raw_pos[1] + 3.141592f;
             data[3] = raw_pos[2] + 3.141592f;
             data[4] = raw_pos[3];

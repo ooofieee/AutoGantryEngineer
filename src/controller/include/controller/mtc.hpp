@@ -26,6 +26,7 @@ public:
 
     void doTask(){
         task_ = create_task();
+        task_.enableIntrospection(true);
 
         try{
             task_.init();

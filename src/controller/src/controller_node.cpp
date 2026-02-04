@@ -9,7 +9,7 @@ int main(int argc, char ** argv){
     auto options = rclcpp::NodeOptions().allow_undeclared_parameters(true).automatically_declare_parameters_from_overrides(true);
 
     auto phase0_node = std::make_shared<Phase0Node>("phase0_node", options);
-    auto phase1_node = std::make_shared<Phase1Node>("phase1_node", options);
+    //auto phase1_node = std::make_shared<Phase1Node>("phase1_node", options);
 
     executor.add_node(phase0_node);
     //executor.add_node(phase1_node);

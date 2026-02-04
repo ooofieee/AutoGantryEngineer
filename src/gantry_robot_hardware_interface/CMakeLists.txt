@@ -13,6 +13,7 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(rm_serial_driver REQUIRED)
 find_package(moveit_msgs REQUIRED)
+find_package(controller_manager_msgs REQUIRED)
 
 add_library(
   gantry_robot_hardware_interface
@@ -31,6 +32,7 @@ ament_target_dependencies(
   rclcpp_lifecycle
   rm_serial_driver
   moveit_msgs
+  controller_manager_msgs
 )
 # prevent pluginlib from using boost
 target_compile_definitions(gantry_robot_hardware_interface PUBLIC "PLUGINLIB__DISABLE_BOOST_FUNCTIONS")
@@ -87,6 +89,7 @@ ament_export_dependencies(
   rclcpp_lifecycle
   rm_serial_driver
   moveit_msgs
+  controller_manager_msgs
 )
 
 ament_package()

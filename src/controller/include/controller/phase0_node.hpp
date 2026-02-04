@@ -62,7 +62,7 @@ private:
         auto cartesian_planner = std::make_shared<mtc::solvers::CartesianPath>();
         cartesian_planner->setMaxVelocityScalingFactor(0.5);
         cartesian_planner->setMaxAccelerationScalingFactor(0.5);
-        cartesian_planner->setStepSize(0.01);
+        cartesian_planner->setStepSize(0.001);
 
         {
             auto stage = std::make_unique<mtc::stages::CurrentState>("current state");

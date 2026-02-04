@@ -27,8 +27,8 @@
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "rclcpp/macros.hpp"
 #include "rclcpp_lifecycle/state.hpp"
+#include "controller_manager_msgs/srv/switch_controller.hpp"
 
-// 直接使用已有的协议类
 #include "rm_serial_driver/protocol/engineer_protocol.hpp"
 
 namespace gantry_robot_hardware_interface
@@ -64,13 +64,14 @@ public:
   hardware_interface::return_type write(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
+  void update_current_state();
+
 private:
   // 关节位置命令和状态
   std::vector<double> hw_commands_position_;
   std::vector<double> hw_states_position_;
   std::vector<double> hw_states_velocity_;
   
-  // 直接使用 EngineerProtocol
   std::unique_ptr<fyt::serial_driver::protocol::EngineerProtocol> protocol_;
   
   // 串口参数
@@ -82,6 +83,15 @@ private:
   
   // 模式标志：mode == 3 时为 ros_control 模式，允许 write
   std::atomic<bool> is_ros_control_mode_{false};
+  
+  // JTC 控制器状态
+  std::atomic<bool> jtc_active_{false};
+  rclcpp::Node::SharedPtr node_;
+  rclcpp::Client<controller_manager_msgs::srv::SwitchController>::SharedPtr switch_controller_client_;
+  
+  // JTC 控制方法
+  void deactivate_jtc();
+  void activate_jtc();
   
   // 日志
   rclcpp::Logger logger_{rclcpp::get_logger("GantryRobotHardwareInterface")};
