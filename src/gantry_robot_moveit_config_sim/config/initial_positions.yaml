@@ -1,7 +1,7 @@
 # Default initial positions for gantry_robot's ros2_control fake system
 
 initial_positions:
-  world_to_x_rail: 0.0
+  # world_to_x_rail: 0.0
   joint_1_2: -0.3
   joint_2_3: 3.1416
   joint_3_4: 3.1416

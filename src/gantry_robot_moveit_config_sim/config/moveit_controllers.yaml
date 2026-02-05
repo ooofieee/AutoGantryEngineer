@@ -11,7 +11,7 @@ moveit_simple_controller_manager:
     type: FollowJointTrajectory
     default: true
     joints:
-      - world_to_x_rail
+      # - world_to_x_rail
       - joint_1_2
       - joint_2_3
       - joint_3_4

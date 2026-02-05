@@ -58,6 +58,10 @@ private:
         auto sampling_planner = std::make_shared<mtc::solvers::PipelinePlanner>(MTC::getNodeSharedPtr());
         sampling_planner->setMaxAccelerationScalingFactor(0.5);
         sampling_planner->setMaxVelocityScalingFactor(0.5);
+        sampling_planner->setProperty("planning_time", 5.0);
+
+        task.properties().set("group", "gantry_robot");
+        task.properties().set("eef", "link7");
 
         auto cartesian_planner = std::make_shared<mtc::solvers::CartesianPath>();
         cartesian_planner->setMaxVelocityScalingFactor(0.5);
@@ -103,6 +107,11 @@ private:
             stage->setGoal(goal_pose);
             task.add(std::move(stage));
         }
+
+        {
+            
+        }
+        
 
         {
             auto stage = std::make_unique<mtc::stages::MoveRelative>("linear down", cartesian_planner);
