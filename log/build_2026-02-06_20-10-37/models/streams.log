@@ -1,0 +1,39 @@
+[0.012s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/models': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/models -- -j16 -l16
+[0.035s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/models' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/models -- -j16 -l16
+[0.043s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/models': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/models
+[0.048s] -- Install configuration: ""
+[0.048s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/launch
+[0.048s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/launch/display.launch.py
+[0.048s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes
+[0.048s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link6.STL
+[0.048s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/gantry_robot.urdf
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link4.STL
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link3.STL
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link5.STL
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link7.STL
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link1.STL
+[0.049s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/meshes/link2.STL
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf/gantry_robot.urdf
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf/scene.xacro
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf/stand.xacro
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf/stand.urdf
+[0.050s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/models/share/models/urdf/gantry_robot.xacro
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/rviz
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/rviz/urdf.rviz
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/ament_index/resource_index/package_run_dependencies/models
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/ament_index/resource_index/parent_prefix_path/models
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/environment/ament_prefix_path.sh
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/environment/ament_prefix_path.dsv
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/environment/path.sh
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/environment/path.dsv
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/local_setup.bash
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/local_setup.sh
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/local_setup.zsh
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/local_setup.dsv
+[0.050s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/models/share/models/package.dsv
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/ament_index/resource_index/packages/models
+[0.050s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/cmake/modelsConfig.cmake
+[0.051s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/cmake/modelsConfig-version.cmake
+[0.051s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/models/share/models/package.xml
+[0.052s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/models' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/models

@@ -1,0 +1,4 @@
+source;share/orchestrator/local_setup.bash
+source;share/orchestrator/local_setup.dsv
+source;share/orchestrator/local_setup.sh
+source;share/orchestrator/local_setup.zsh

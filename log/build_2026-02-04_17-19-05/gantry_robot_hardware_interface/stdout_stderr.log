@@ -1,0 +1,12 @@
+[35m[1mConsolidate compiler generated dependencies of target gantry_robot_hardware_interface[0m
+[ 55%] Built target gmock_main
+[ 55%] Built target gmock
+[ 66%] [32mBuilding CXX object CMakeFiles/gantry_robot_hardware_interface.dir/src/gantry_robot_hardware_interface.cpp.o[0m
+[ 88%] Built target test_gantry_robot_hardware_interface
+In file included from [01m[K/home/ooofieee/Desktop/ws_sim/src/gantry_robot_hardware_interface/src/gantry_robot_hardware_interface.cpp:19[m[K:
+[01m[K/home/ooofieee/Desktop/ws_sim/src/gantry_robot_hardware_interface/include/gantry_robot_hardware_interface/gantry_robot_hardware_interface.hpp:66:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid gantry_robot_hardware_interface::GantryRobotHardwareInterface::update_current_state()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+   66 |   void [01;31m[Kupdate_current_state[m[K() override;
+      |        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/gantry_robot_hardware_interface.dir/build.make:76: CMakeFiles/gantry_robot_hardware_interface.dir/src/gantry_robot_hardware_interface.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:176: CMakeFiles/gantry_robot_hardware_interface.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

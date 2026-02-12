@@ -1,0 +1,29 @@
+[ 33%] Built target target_scene_publisher
+[100%] Built target ee_alignment_test
+[100%] Built target stand_random_pose
+-- Install configuration: ""
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/lib/motion_planning_test/ee_alignment_test
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/lib/motion_planning_test/stand_random_pose
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/lib/motion_planning_test/target_scene_publisher
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/launch
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/launch/full_test.launch.py
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/launch/target_scene_publisher.launch.py
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/launch/stand_random_pose.launch.py
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/launch/ee_alignment_test.launch.py
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/include
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/include/motion_planning_test
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/ament_index/resource_index/package_run_dependencies/motion_planning_test
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/ament_index/resource_index/parent_prefix_path/motion_planning_test
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/environment/path.sh
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/environment/path.dsv
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/local_setup.bash
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/local_setup.sh
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/local_setup.zsh
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/local_setup.dsv
+-- Installing: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/package.dsv
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/ament_index/resource_index/packages/motion_planning_test
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/cmake/motion_planning_testConfig.cmake
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/cmake/motion_planning_testConfig-version.cmake
+-- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/motion_planning_test/share/motion_planning_test/package.xml

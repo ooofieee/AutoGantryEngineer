@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target gantry_robot_hardware_interface[0m
+[ 55%] Built target gmock_main
+[ 55%] Built target gmock
+[ 66%] [32mBuilding CXX object CMakeFiles/gantry_robot_hardware_interface.dir/src/gantry_robot_hardware_interface.cpp.o[0m
+[ 88%] Built target test_gantry_robot_hardware_interface

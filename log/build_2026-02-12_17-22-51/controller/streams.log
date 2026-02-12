@@ -1,0 +1,41 @@
+[0.011s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[0.041s] [35m[1mConsolidate compiler generated dependencies of target controller_node[0m
+[0.065s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[0.620s] In file included from [01m[K/home/ooofieee/Desktop/ws_sim/src/controller/include/controller/phase_test.hpp:5[m[K,
+[0.620s]                  from [01m[K/home/ooofieee/Desktop/ws_sim/src/controller/src/controller_node.cpp:4[m[K:
+[0.620s] [01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[0.620s]    35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+[0.620s]       |  [01;35m[K^~~~~~~[m[K
+[7.880s] [100%] [32m[1mLinking CXX executable controller_node[0m
+[8.133s] [100%] Built target controller_node
+[8.141s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[8.142s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller
+[8.147s] -- Install configuration: ""
+[8.147s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node
+[8.148s] -- Set runtime path of "/home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node" to ""
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include/
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase1_node.hpp
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase_test.hpp
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/mtc.hpp
+[8.148s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/fuzzy_pose_generator.hpp
+[8.148s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase0_node.hpp
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase2_node.hpp
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch/controller.launch.py
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.sh
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.dsv
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.sh
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.dsv
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.bash
+[8.148s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.sh
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.zsh
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.dsv
+[8.149s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.dsv
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/packages/controller
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig.cmake
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig-version.cmake
+[8.149s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.xml
+[8.150s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller

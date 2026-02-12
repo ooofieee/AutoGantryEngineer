@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gantry_robot">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="ros2_control_hardware_type" default="mock" />
+    <xacro:arg name="serial_port" default="/dev/ttyUSB0" />
+    <xacro:arg name="baud_rate" default="115200" />
+    <xacro:arg name="enable_data_print" default="false" />
+
+    <!-- Import gantry_robot urdf file -->
+    <xacro:include filename="$(find models)/urdf/scene.xacro" />
+
+    <!-- Import control_xacro based on hardware type -->
+    <xacro:if value="${'$(arg ros2_control_hardware_type)' == 'real'}">
+        <xacro:include filename="gantry_robot_real.ros2_control.xacro" />
+        <xacro:gantry_robot_ros2_control 
+            name="GantryRobotSystem" 
+            initial_positions_file="$(arg initial_positions_file)"
+            serial_port="$(arg serial_port)"
+            baud_rate="$(arg baud_rate)"
+            enable_data_print="$(arg enable_data_print)"/>
+    </xacro:if>
+    
+    <xacro:unless value="${'$(arg ros2_control_hardware_type)' == 'real'}">
+        <xacro:include filename="gantry_robot.ros2_control.xacro" />
+        <xacro:gantry_robot_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    </xacro:unless>
+
+</robot>

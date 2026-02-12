@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ooofieee/Desktop/ws_sim/build/gantry_robot_hardware_interface/libgantry_robot_hardware_interface.so" "TARGETS" "gantry_robot_hardware_interface" "RUNTIME_DESTINATION" "bin" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib")

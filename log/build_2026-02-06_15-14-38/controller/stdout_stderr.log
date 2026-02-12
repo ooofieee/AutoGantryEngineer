@@ -1,0 +1,9 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+In file included from [01m[K/home/ooofieee/Desktop/ws_sim/src/controller/src/controller_node.cpp:2[m[K:
+[01m[K/home/ooofieee/Desktop/ws_sim/src/controller/include/controller/phase0_node.hpp:[m[K In member function ‘[01m[Kvirtual moveit::task_constructor::Task Phase0Node::create_task()[m[K’:
+[01m[K/home/ooofieee/Desktop/ws_sim/src/controller/include/controller/phase0_node.hpp:82:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kconnect_stage_ptr[m[K’ was not declared in this scope
+   82 |             [01;31m[Kconnect_stage_ptr[m[K = stage.get();
+      |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/controller_node.dir/build.make:76: CMakeFiles/controller_node.dir/src/controller_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

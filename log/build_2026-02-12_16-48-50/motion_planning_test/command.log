@@ -1,0 +1,4 @@
+Invoking command in '/home/ooofieee/Desktop/ws_sim/build/motion_planning_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/motion_planning_test -- -j16 -l16
+Invoked command in '/home/ooofieee/Desktop/ws_sim/build/motion_planning_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/motion_planning_test -- -j16 -l16
+Invoking command in '/home/ooofieee/Desktop/ws_sim/build/motion_planning_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/motion_planning_test
+Invoked command in '/home/ooofieee/Desktop/ws_sim/build/motion_planning_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/motion_planning_test

@@ -1,0 +1,34 @@
+[0.013s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[0.049s] [35m[1mConsolidate compiler generated dependencies of target controller_node[0m
+[0.074s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[9.648s] [100%] [32m[1mLinking CXX executable controller_node[0m
+[9.949s] [100%] Built target controller_node
+[9.959s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[9.960s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller
+[9.966s] -- Install configuration: ""
+[9.966s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node
+[9.967s] -- Set runtime path of "/home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node" to ""
+[9.967s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include/
+[9.967s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller
+[9.967s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase1_node.hpp
+[9.967s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/mtc.hpp
+[9.967s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase0_node.hpp
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase2_node.hpp
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch/controller.launch.py
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.sh
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.dsv
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.sh
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.dsv
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.bash
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.sh
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.zsh
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.dsv
+[9.968s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.dsv
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/packages/controller
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig.cmake
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig-version.cmake
+[9.968s] -- Up-to-date: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.xml
+[9.971s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller

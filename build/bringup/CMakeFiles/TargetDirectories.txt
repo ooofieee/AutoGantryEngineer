@@ -1,0 +1,9 @@
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/uninstall.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/bringup_uninstall.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/test.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/edit_cache.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/rebuild_cache.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/list_install_components.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/install.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/install/local.dir
+/home/ooofieee/Desktop/ws_sim/build/bringup/CMakeFiles/install/strip.dir

@@ -1,0 +1,90 @@
+[0.010s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake /home/ooofieee/Desktop/ws_sim/src/controller -DCMAKE_INSTALL_PREFIX=/home/ooofieee/Desktop/ws_sim/install/controller
+[0.045s] -- The C compiler identification is GNU 12.3.0
+[0.083s] -- The CXX compiler identification is GNU 12.3.0
+[0.087s] -- Detecting C compiler ABI info
+[0.134s] -- Detecting C compiler ABI info - done
+[0.142s] -- Check for working C compiler: /bin/cc - skipped
+[0.143s] -- Detecting C compile features
+[0.143s] -- Detecting C compile features - done
+[0.146s] -- Detecting CXX compiler ABI info
+[0.214s] -- Detecting CXX compiler ABI info - done
+[0.222s] -- Check for working CXX compiler: /bin/c++ - skipped
+[0.223s] -- Detecting CXX compile features
+[0.223s] -- Detecting CXX compile features - done
+[0.226s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.371s] -- Found Python3: /bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.457s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[0.491s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.497s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.505s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.515s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.529s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.563s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.565s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.625s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.651s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.681s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.688s] -- Looking for pthread.h
+[0.740s] -- Looking for pthread.h - found
+[0.740s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.792s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.793s] -- Found Threads: TRUE  
+[0.829s] -- Found moveit_task_constructor_core: 0.1.3 (/opt/ros/humble/share/moveit_task_constructor_core/cmake)
+[0.866s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.902s] -- Found parameter_traits: 0.6.0 (/opt/ros/humble/share/parameter_traits/cmake)
+[0.912s] -- Found rclcpp_lifecycle: 16.0.17 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[0.930s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.001s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.048s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.048s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.234s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[1.257s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[1.267s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[1.284s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[1.340s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.398s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.398s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/ooofieee/Desktop/ws_sim/src/controller/include>
+[1.398s] -- Configured cppcheck exclude dirs and/or files: 
+[1.399s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.399s] -- Added test 'lint_cmake' to check CMake code style
+[1.399s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.400s] -- Added test 'uncrustify' to check C / C++ code style
+[1.400s] -- Configured uncrustify additional arguments: 
+[1.400s] -- Added test 'xmllint' to check XML markup files
+[1.401s] -- Configuring done
+[1.419s] -- Generating done
+[1.425s] -- Build files have been written to: /home/ooofieee/Desktop/ws_sim/build/controller
+[1.436s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake /home/ooofieee/Desktop/ws_sim/src/controller -DCMAKE_INSTALL_PREFIX=/home/ooofieee/Desktop/ws_sim/install/controller
+[1.438s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[1.478s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[9.828s] [100%] [32m[1mLinking CXX executable controller_node[0m
+[10.070s] [100%] Built target controller_node
+[10.077s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --build /home/ooofieee/Desktop/ws_sim/build/controller -- -j16 -l16
+[10.078s] Invoking command in '/home/ooofieee/Desktop/ws_sim/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller
+[10.082s] -- Install configuration: ""
+[10.082s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node
+[10.083s] -- Set runtime path of "/home/ooofieee/Desktop/ws_sim/install/controller/lib/controller/controller_node" to ""
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include/
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase1_node.hpp
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/mtc.hpp
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase0_node.hpp
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/include//controller/phase2_node.hpp
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/launch/controller.launch.py
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+[10.083s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.sh
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/ament_prefix_path.dsv
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.sh
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/environment/path.dsv
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.bash
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.sh
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.zsh
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/local_setup.dsv
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.dsv
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/ament_index/resource_index/packages/controller
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig.cmake
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/cmake/controllerConfig-version.cmake
+[10.084s] -- Installing: /home/ooofieee/Desktop/ws_sim/install/controller/share/controller/package.xml
+[10.085s] Invoked command in '/home/ooofieee/Desktop/ws_sim/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /bin/cmake --install /home/ooofieee/Desktop/ws_sim/build/controller
