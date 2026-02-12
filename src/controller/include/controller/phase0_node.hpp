@@ -70,6 +70,7 @@ private:
 
         mtc::Stage* current_state_ptr = nullptr;
         mtc::Stage* preload_state_ptr = nullptr;
+        mtc::Stage* move_to_load_ptr = nullptr;
         {
             auto stage = std::make_unique<mtc::stages::CurrentState>("current state");
             current_state_ptr = stage.get();
@@ -183,6 +184,7 @@ private:
             path_constraints.position_constraints.push_back(pos_constraint);
             stage->setPathConstraints(path_constraints);
 
+            move_to_load_ptr = stage.get();
             task.add(std::move(stage));
         }
 
@@ -192,7 +194,7 @@ private:
             generator->setTolerance(0.002, 0.1);
 
             geometry_msgs::msg::TransformStamped target_tf = get_tf();
-            generator->setMonitoredStage(preload_state_ptr);
+            generator->setMonitoredStage(move_to_load_ptr);
             geometry_msgs::msg::PoseStamped goal_pose;
             goal_pose.header.frame_id = "world";
             goal_pose.header.stamp = this->now();
