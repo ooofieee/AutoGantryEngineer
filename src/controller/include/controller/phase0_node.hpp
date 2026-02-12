@@ -203,11 +203,6 @@ private:
             goal_pose.pose.position.z = target_tf.transform.translation.z;
             goal_pose.pose.orientation = target_tf.transform.rotation;
 
-            goal_pose.pose.position.x = target_tf.transform.translation.x;
-            goal_pose.pose.position.y = target_tf.transform.translation.y;
-            goal_pose.pose.position.z = target_tf.transform.translation.z;
-            goal_pose.pose.orientation = target_tf.transform.rotation;
-
             tf2::Quaternion q(
                 target_tf.transform.rotation.x,
                 target_tf.transform.rotation.y,
