@@ -1,9 +1,0 @@
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/uninstall.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/models_uninstall.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/test.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/edit_cache.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/rebuild_cache.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/list_install_components.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/install.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/install/local.dir
-/home/ooofieee/Desktop/ws_sim/build/models/CMakeFiles/install/strip.dir

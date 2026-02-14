@@ -1,3 +1,0 @@
-move_group:
-  ros__parameters:
-    capabilities: "move_group/ExecuteTaskSolutionCapability"
