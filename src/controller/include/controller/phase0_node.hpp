@@ -22,6 +22,7 @@ public:
         while (rclcpp::ok()) {
             try {
                 tf_buffer_.lookupTransform("world", "link7", tf2::TimePointZero, std::chrono::seconds(1));
+                tf_buffer_.lookupTransform("world", "cylinder_target_frame", tf2::TimePointZero, std::chrono::seconds(1));
                 RCLCPP_INFO(this->get_logger(), "TF available, starting task");
                 break;
             } catch (const tf2::TransformException & e) {
@@ -70,7 +71,6 @@ private:
 
         mtc::Stage* current_state_ptr = nullptr;
         mtc::Stage* preload_state_ptr = nullptr;
-        mtc::Stage* move_to_load_ptr = nullptr;
         {
             auto stage = std::make_unique<mtc::stages::CurrentState>("current state");
             current_state_ptr = stage.get();
@@ -131,18 +131,6 @@ private:
             preload_state_ptr = wrapper.get();
             task.add(std::move(wrapper));
         }
-        
-        // {
-        //     auto stage = std::make_unique<mtc::stages::MoveRelative>("linear down", cartesian_planner);
-        //     stage->setGroup(task.properties().get<std::string>("group"));
-        //     stage->setIKFrame("link7");
-        //     geometry_msgs::msg::Vector3Stamped direction;
-        //     direction.header.frame_id = "cylinder_target_frame";
-        //     direction.vector.z = -0.15;
-        //     stage->setDirection(direction);
-        //     stage->setMinMaxDistance(0.145, 0.15);
-        //     task.add(std::move(stage));
-        // }
 
         {
             mtc::stages::Connect::GroupPlannerVector planners = {
@@ -153,13 +141,15 @@ private:
             stage->setTimeout(10.0);
 
             moveit_msgs::msg::Constraints path_constraints;
+            geometry_msgs::msg::TransformStamped target_tf = get_tf();
+
 
             moveit_msgs::msg::OrientationConstraint ori_constraint;
             ori_constraint.link_name = "link7";
             ori_constraint.header.frame_id = "world";
-            ori_constraint.orientation.w = 1.0;
-            ori_constraint.absolute_x_axis_tolerance = 0.5;
-            ori_constraint.absolute_y_axis_tolerance = 0.5;
+            ori_constraint.orientation = target_tf.transform.rotation;
+            ori_constraint.absolute_x_axis_tolerance = 0.1;
+            ori_constraint.absolute_y_axis_tolerance = 0.1;
             ori_constraint.absolute_z_axis_tolerance = 3.14;
 
             moveit_msgs::msg::PositionConstraint pos_constraint;
@@ -167,10 +157,9 @@ private:
             pos_constraint.header.frame_id = "world";
             shape_msgs::msg::SolidPrimitive bounding_region;
             bounding_region.type = shape_msgs::msg::SolidPrimitive::CYLINDER;
-            bounding_region.dimensions = {0.2, 0.05};
+            bounding_region.dimensions = {0.2, 0.03};
             pos_constraint.constraint_region.primitives.push_back(bounding_region);
             
-            geometry_msgs::msg::TransformStamped target_tf = get_tf();
             geometry_msgs::msg::PoseStamped goal_pose;
             goal_pose.header.frame_id = "world";
             goal_pose.header.stamp = this->now();
@@ -184,17 +173,17 @@ private:
             path_constraints.position_constraints.push_back(pos_constraint);
             stage->setPathConstraints(path_constraints);
 
-            move_to_load_ptr = stage.get();
             task.add(std::move(stage));
         }
 
         {
             auto generator = std::make_unique<FuzzyPoseGenerator>("fuzzy pose generator for loading");
-            generator->setSampleCount(50);
+            generator->setSampleCount(20);
             generator->setTolerance(0.002, 0.1);
 
             geometry_msgs::msg::TransformStamped target_tf = get_tf();
-            generator->setMonitoredStage(move_to_load_ptr);
+            generator->setMonitoredStage(preload_state_ptr); 
+
             geometry_msgs::msg::PoseStamped goal_pose;
             goal_pose.header.frame_id = "world";
             goal_pose.header.stamp = this->now();
@@ -209,7 +198,7 @@ private:
                 target_tf.transform.rotation.z,
                 target_tf.transform.rotation.w
             );
-            tf2::Vector3 z_offset(0.0, 0.0, -0.15);
+            tf2::Vector3 z_offset(0.0, 0.0, -0.08);
             tf2::Vector3 rotated_offset = tf2::quatRotate(q, z_offset);
             
             goal_pose.pose.position.x += rotated_offset.x();
@@ -222,22 +211,22 @@ private:
             generator->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
 
             auto wrapper = std::make_unique<mtc::stages::ComputeIK>("compute ik for loading", std::move(generator));
-            wrapper->setMaxIKSolutions(8);
+            wrapper->setMaxIKSolutions(2);
             wrapper->setMinSolutionDistance(1.0);
             wrapper->setIKFrame("link7");
             wrapper->setTargetPose(goal_pose);
             wrapper->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
-            wrapper->setIgnoreCollisions(true);
+            wrapper->setIgnoreCollisions(false);
             task.add(std::move(wrapper));
         }
 
-        // {
-        //     auto stage = std::make_unique<mtc::stages::MoveTo>("move back to home", sampling_planner);
-        //     stage->setTimeout(10.0);
-        //     stage->setGoal("home_gr");
-        //     stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
-        //     task.add(std::move(stage));
-        // }
+        {
+            auto stage = std::make_unique<mtc::stages::MoveTo>("move back to home", sampling_planner);
+            stage->setTimeout(10.0);
+            stage->setGoal("home_gr");
+            stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
+            task.add(std::move(stage));
+        }
         
         return task;
     }
