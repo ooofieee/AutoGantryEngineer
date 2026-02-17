@@ -16,8 +16,8 @@ namespace mtc = moveit::task_constructor;
 
 class MTC {
 public:
-    MTC (const rclcpp::NodeOptions & options) 
-    : node_(std::make_shared<rclcpp::Node>("mtc_node", options)) {}
+    MTC(const rclcpp::NodeOptions& options, const std::string& node_name = "mtc_node")
+    : node_(std::make_shared<rclcpp::Node>(node_name, options)) {}
 
     rclcpp::node_interfaces::NodeBaseInterface::SharedPtr get_node_base_interface() {
         return node_->get_node_base_interface();
@@ -31,6 +31,7 @@ public:
 
         try{
             task_.init();
+            task_.introspection().publishTaskDescription();
         }
         catch (mtc::InitStageException& e){
             RCLCPP_ERROR_STREAM(LOGGER, e);
@@ -41,7 +42,16 @@ public:
             RCLCPP_ERROR_STREAM(LOGGER, "Task planning failed");
             return;
         }
+
+        task_.introspection().publishTaskState();
+        
+        if (task_.solutions().empty()){
+            RCLCPP_ERROR_STREAM(LOGGER, "No solutions found");
+            return;
+        }
+        
         task_.introspection().publishSolution(*task_.solutions().front());
+        task_.introspection().publishAllSolutions(false);
 
         // Wait for the execute_task_solution action server provided by move_group + MTC capability
         if (!wait_for_execute_server(std::chrono::seconds(45))){
@@ -54,6 +64,10 @@ public:
             RCLCPP_ERROR_STREAM(LOGGER, "Task execution failed");
             return;
         }
+
+        task_.introspection().publishTaskState();
+        task_.introspection().publishSolution(*task_.solutions().front());
+        task_.introspection().publishAllSolutions(false);
 
         return;
     }

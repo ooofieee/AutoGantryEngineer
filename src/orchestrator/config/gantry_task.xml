@@ -1,0 +1,21 @@
+<root BTCPP_format="4" main_tree_to_execute="GantryTaskTree">
+
+    <BehaviorTree ID="GantryTaskTree">
+        <Sequence name="MainPhase01Flow">
+            <Sequence name="Phase0_LoadAlign">
+                <PublishPhase name="SetPhase0" phase="0"/>
+                <ExecutePhase0 name="MTC_LoadAlign" 
+                             success="{phase0_success}" 
+                             error_msg="{phase0_error}"/>
+            </Sequence>
+
+            <Sequence name="Phase1_Push">
+                <PublishPhase name="SetPhase1" phase="1"/>
+                <ExecutePhase1 name="MTC_Push" 
+                             success="{phase1_success}" 
+                             error_msg="{phase1_error}"/>
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+
+</root>

@@ -57,4 +57,15 @@ install(
   DESTINATION share/${PROJECT_NAME}/launch
 )
 
+ament_export_include_directories(include)
+ament_export_dependencies(
+  rclcpp
+  moveit_task_constructor_core
+  std_msgs
+  geometry_msgs
+  tf2_ros
+  tf2
+  tf2_geometry_msgs
+)
+
 ament_package()

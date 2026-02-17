@@ -8,7 +8,7 @@
 class Phase1Node : public rclcpp::Node, public MTC {
 public:
     Phase1Node(const std::string & name, const rclcpp::NodeOptions & options)
-    : rclcpp::Node(name, options), MTC(options) {
+    : rclcpp::Node(name, options), MTC(options, name + "_mtc") {
         doTask();
     }
 
@@ -30,14 +30,23 @@ private:
         }
 
         {
+            auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>("attach object");
+            stage->attachObject("cylinder_target", "link7");
+            task.add(std::move(stage));
+        }
+
+        {
             auto stage = std::make_unique<mtc::stages::MoveRelative>("linear push", cartesian_planner);
-            stage->setGroup(task.properties().get<std::string>("group"));
-            stage->setIKFrame(task.properties().get<std::string>("eef"));
+            stage->setGroup("gantry_robot");
+            stage->setIKFrame("link7");
+            
             geometry_msgs::msg::Vector3Stamped direction;
-            direction.header.frame_id = task.properties().get<std::string>("eef");
-            direction.vector.y = 1.0;
+            direction.header.frame_id = "cylinder_target_frame";
+            direction.vector.x = 0.0;
+            direction.vector.y = 0.1;
+            direction.vector.z = 0.0;
             stage->setDirection(direction);
-            stage->setMinMaxDistance(0.095, 0.1);
+            
             task.add(std::move(stage));
         }
         return task;

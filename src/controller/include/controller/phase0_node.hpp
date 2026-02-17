@@ -15,7 +15,7 @@
 class Phase0Node : public rclcpp::Node, public MTC {
 public:
     Phase0Node(const std::string & name, const rclcpp::NodeOptions & options)
-    : rclcpp::Node(name, options), MTC(options),
+    : rclcpp::Node(name, options), MTC(options, name + "_mtc"),
       tf_buffer_{this->get_clock()},
       tf_listener_(std::make_shared<tf2_ros::TransformListener>(tf_buffer_)) {
         RCLCPP_INFO(this->get_logger(), "Waiting for TF...");
@@ -220,13 +220,13 @@ private:
             task.add(std::move(wrapper));
         }
 
-        {
-            auto stage = std::make_unique<mtc::stages::MoveTo>("move back to home", sampling_planner);
-            stage->setTimeout(10.0);
-            stage->setGoal("home_gr");
-            stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
-            task.add(std::move(stage));
-        }
+        // {
+        //     auto stage = std::make_unique<mtc::stages::MoveTo>("move back to home", sampling_planner);
+        //     stage->setTimeout(10.0);
+        //     stage->setGoal("home_gr");
+        //     stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
+        //     task.add(std::move(stage));
+        // }
         
         return task;
     }

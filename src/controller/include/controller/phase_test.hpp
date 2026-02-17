@@ -7,7 +7,7 @@
 class PhaseTestNode : public rclcpp::Node, public MTC {
 public:
     PhaseTestNode(const std::string & name, const rclcpp::NodeOptions & options)
-    : rclcpp::Node(name, options), MTC(options) {
+    : rclcpp::Node(name, options), MTC(options, name + "_mtc") {
         doTask();
     }
 

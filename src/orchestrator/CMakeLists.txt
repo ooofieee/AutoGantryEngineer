@@ -7,15 +7,44 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(moveit_msgs REQUIRED)
 find_package(rm_serial_driver REQUIRED)
+find_package(controller REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(moveit_task_constructor_core REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+
+# Find BehaviorTree.CPP
+find_package(behaviortree_cpp REQUIRED PATHS /usr/local/share/behaviortree_cpp/cmake)
 
 add_executable(serial_test_node src/serial_test_node.cpp)
 ament_target_dependencies(serial_test_node 
   rclcpp 
   moveit_msgs
   rm_serial_driver)
+
+# Add BehaviorTree-based orchestrator
+add_executable(bt_orchestrator_node src/bt_orchestrator_node.cpp)
+ament_target_dependencies(bt_orchestrator_node
+  ament_index_cpp
+  rclcpp
+  moveit_msgs
+  controller
+  std_msgs
+  moveit_task_constructor_core
+  geometry_msgs
+  tf2_ros
+  tf2
+  tf2_geometry_msgs
+  behaviortree_cpp)
+target_include_directories(bt_orchestrator_node PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 
 
 
@@ -32,8 +61,18 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  TARGETS serial_test_node
+  TARGETS serial_test_node bt_orchestrator_node
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()

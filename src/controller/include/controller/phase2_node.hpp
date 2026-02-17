@@ -8,7 +8,7 @@
 class Phase2Node : public rclcpp::Node, public MTC {
 public:
     Phase2Node(const std::string & name, const rclcpp::NodeOptions & options)
-    : rclcpp::Node(name, options), MTC(options) {}
+    : rclcpp::Node(name, options), MTC(options, name + "_mtc") {}
 
 private:
 
