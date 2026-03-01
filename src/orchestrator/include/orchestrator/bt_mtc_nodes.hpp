@@ -6,6 +6,7 @@
 #include <std_msgs/msg/int8.hpp>
 #include <controller/phase0_node.hpp>
 #include <controller/phase1_node.hpp>
+#include <controller/phase2_node.hpp>
 
 #include <future>
 #include <memory>
@@ -150,6 +151,34 @@ protected:
 private:
     rclcpp::Node::SharedPtr node_;
     std::shared_ptr<Phase1Node> phase1_instance_;
+};
+
+/**
+ * @brief Phase 2 - Circular Rotation 阶段的 MTC 执行节点
+ */
+class ExecutePhase2 : public MTCActionNode {
+public:
+    ExecutePhase2(const std::string& name, const BT::NodeConfiguration& config,
+                  rclcpp::Node::SharedPtr node)
+        : MTCActionNode(name, config), node_(node) {}
+
+protected:
+    MTCExecutionResult executePhase() override {
+        RCLCPP_INFO(node_->get_logger(), "Starting Phase 2: Circular Rotation (-90 deg)");
+
+        try {
+            auto options = makePhaseNodeOptions(node_);
+            phase2_instance_ = std::make_shared<Phase2Node>(uniqueNodeName("phase2_node"), options);
+            return {true, ""};
+        } catch (const std::exception& e) {
+            RCLCPP_ERROR(node_->get_logger(), "Phase 2 failed: %s", e.what());
+            return {false, e.what()};
+        }
+    }
+
+private:
+    rclcpp::Node::SharedPtr node_;
+    std::shared_ptr<Phase2Node> phase2_instance_;
 };
 
 /**
